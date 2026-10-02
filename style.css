@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #171717;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+}
+
+
+/* Layout */
+
+header,
+main,
+footer {
+  width: min(90%, 760px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Navigation */
+
+header {
+  padding: 42px 0 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 30px;
+}
+
+.site-name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #111;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+}
+
+nav a {
+  color: #555;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+
+/* Main */
+
+main {
+  min-height: 70vh;
+}
+
+.intro {
+  margin-bottom: 95px;
+}
+
+.intro p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+section {
+  margin-bottom: 90px;
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  color: #111;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 0 0 34px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+h3 {
+  margin: 4px 0 9px;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+p {
+  margin-top: 0;
+}
+
+
+/* Writing / research entries */
+
+.item {
+  margin-bottom: 38px;
+}
+
+.item h3 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.item h3 a:hover {
+  text-decoration: underline;
+}
+
+.item p {
+  color: #555;
+}
+
+.date {
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.73rem;
+  color: #888 !important;
+}
+
+.more a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.more a:hover {
+  color: #000;
+}
+
+
+/* Footer */
+
+footer {
+  padding: 28px 0 50px;
+  border-top: 1px solid #e8e8e8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  color: #999;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+  html {
+    font-size: 17px;
+  }
+
+  header {
+    display: block;
+    padding-top: 28px;
+    padding-bottom: 55px;
+  }
+
+  nav {
+    margin-top: 18px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+}
