@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+  <title id="title">AI-related private-credit deal value and share</title>
+  <desc id="desc">A two-panel bar chart. AI-related private-credit deal value increased from 9 billion dollars in 2024 to 58 billion in 2025. Its share of total private-credit deal value increased from 9 percent to 34 percent.</desc>
+  <style>.bg{fill:#fcfcfb}.ink{fill:#171717}.muted{fill:#6b6b67}.rule{stroke:#b9b9b4;stroke-width:1}.bar{fill:#181818}.bar2{fill:#8b8b86}.h{font:700 29px Arial,Helvetica,sans-serif}.kick{font:700 18px Arial,Helvetica,sans-serif;letter-spacing:2.3px}.lab{font:700 21px Arial,Helvetica,sans-serif}.sm{font:17px Arial,Helvetica,sans-serif}.num{font:700 34px Arial,Helvetica,sans-serif}.serif{font:22px Georgia,'Times New Roman',serif}</style>
+  <rect class="bg" width="1800" height="980"/>
+  <text x="90" y="86" class="kick ink">FIGURE 1</text><text x="90" y="135" class="h ink">AI-related private credit accelerated sharply in 2025</text><text x="90" y="171" class="serif muted">Deal value and share of total private-credit deal value; a change in financing mix, not a default forecast.</text><line x1="90" y1="212" x2="1710" y2="212" class="rule"/>
+  <line x1="900" y1="270" x2="900" y2="796" class="rule"/>
+  <text x="90" y="285" class="kick muted">AI-RELATED PRIVATE-CREDIT DEAL VALUE</text><text x="90" y="319" class="sm muted">US$ billions</text>
+  <line x1="155" y1="710" x2="760" y2="710" class="rule"/><line x1="155" y1="394" x2="155" y2="710" class="rule"/>
+  <text x="123" y="716" class="sm muted">0</text><text x="112" y="558" class="sm muted">30</text><text x="112" y="400" class="sm muted">60</text>
+  <rect x="285" y="663" width="155" height="47" class="bar2"/><rect x="525" y="405" width="155" height="305" class="bar"/>
+  <text x="332" y="647" class="num ink">$9B</text><text x="563" y="389" class="num ink">$58B</text><text x="325" y="748" class="lab ink">2024</text><text x="565" y="748" class="lab ink">2025</text>
+  <text x="990" y="285" class="kick muted">SHARE OF TOTAL PRIVATE-CREDIT DEAL VALUE</text><text x="990" y="319" class="sm muted">Percent</text>
+  <line x1="1055" y1="710" x2="1660" y2="710" class="rule"/><line x1="1055" y1="394" x2="1055" y2="710" class="rule"/>
+  <text x="1023" y="716" class="sm muted">0</text><text x="1012" y="558" class="sm muted">20</text><text x="1012" y="400" class="sm muted">40</text>
+  <rect x="1185" y="639" width="155" height="71" class="bar2"/><rect x="1425" y="441" width="155" height="269" class="bar"/>
+  <text x="1232" y="623" class="num ink">9%</text><text x="1460" y="425" class="num ink">34%</text><text x="1225" y="748" class="lab ink">2024</text><text x="1465" y="748" class="lab ink">2025</text>
+  <line x1="90" y1="850" x2="1710" y2="850" class="rule"/><text x="90" y="886" class="sm ink">Read correctly: credit became more important at the margin; the chart cannot establish the leverage, maturity or ultimate loss holder of each deal.</text><text x="90" y="930" class="sm muted">Source: OECD, <tspan font-style="italic">Global Debt Report 2026</tspan>, using Preqin data. Figures are deal-value classifications, not an exposure census.</text>
+</svg>
