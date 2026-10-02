@@ -32,6 +32,36 @@ a {
   color: inherit;
 }
 
+/* Link treatment */
+
+a,
+a:visited {
+  color: inherit;
+}
+
+.item h3 a,
+.entry-content h3 a {
+  color: #222;
+  text-decoration: none;
+}
+
+.item h3 a:hover,
+.entry-content h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.more a,
+.more a:visited {
+  color: #777;
+  text-decoration: none;
+}
+
+.more a:hover {
+  color: #222;
+}
+
 
 /* --------------------------------------------------
    HEADER
