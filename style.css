@@ -87,6 +87,10 @@ nav a:hover {
   color: #777;
 }
 
+nav a.active {
+  color: #999;
+}
+
 
 /* --------------------------------------------------
    MAIN GRID
@@ -99,7 +103,7 @@ main {
 
 
 /* --------------------------------------------------
-   INTRO
+   HOMEPAGE INTRO
 -------------------------------------------------- */
 
 .intro {
@@ -140,7 +144,47 @@ main {
 
 
 /* --------------------------------------------------
-   INDEX SECTIONS
+   PAGE INTRO
+-------------------------------------------------- */
+
+.page-intro {
+  margin-top: 132px;
+  margin-bottom: 94px;
+
+  max-width: 58ch;
+}
+
+.page-intro h1 {
+  margin: 0 0 18px;
+
+  color: #252525;
+
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.page-intro p {
+  margin: 0;
+
+  max-width: 55ch;
+
+  color: #747474;
+
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.77rem;
+  line-height: 1.65;
+}
+
+
+/* --------------------------------------------------
+   HOMEPAGE INDEX SECTIONS
 -------------------------------------------------- */
 
 .index-section {
@@ -167,6 +211,15 @@ main {
 
 
 /* --------------------------------------------------
+   LISTINGS
+-------------------------------------------------- */
+
+.listing {
+  margin-bottom: 96px;
+}
+
+
+/* --------------------------------------------------
    ENTRIES
 -------------------------------------------------- */
 
@@ -177,6 +230,12 @@ main {
 
   column-gap: 28px;
   align-items: start;
+
+  margin-bottom: 46px;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
 }
 
 .entry-meta {
@@ -231,6 +290,51 @@ main {
 
   font-size: 0.87rem;
   line-height: 1.6;
+}
+
+
+/* --------------------------------------------------
+   ABOUT / PROSE
+-------------------------------------------------- */
+
+.prose {
+  max-width: 58ch;
+}
+
+.prose p {
+  margin: 0 0 25px;
+
+  color: #303030;
+
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.contact {
+  margin-top: 55px;
+
+  display: flex;
+  gap: 24px;
+
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.72rem;
+}
+
+.contact a {
+  color: #666;
+  text-decoration: none;
+
+  transition: color 120ms ease;
+}
+
+.contact a:hover {
+  color: #222;
 }
 
 
@@ -297,6 +401,11 @@ footer {
     font-size: 1.1rem;
   }
 
+  .page-intro {
+    margin-top: 88px;
+    margin-bottom: 68px;
+  }
+
   .index-section {
     margin-bottom: 75px;
   }
@@ -304,10 +413,16 @@ footer {
   .entry {
     grid-template-columns: 1fr;
     row-gap: 8px;
+
+    margin-bottom: 38px;
   }
 
   .entry-meta {
     padding-top: 0;
+  }
+
+  .prose {
+    max-width: 100%;
   }
 
   footer {
