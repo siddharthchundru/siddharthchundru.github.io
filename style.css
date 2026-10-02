@@ -1,185 +1,273 @@
+/* --------------------------------------------------
+   BASE
+-------------------------------------------------- */
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 body {
   margin: 0;
   background: #fff;
-  color: #222;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.55;
+  color: #202020;
+
+  font-family:
+    ui-serif,
+    "Iowan Old Style",
+    "Palatino Linotype",
+    Georgia,
+    serif;
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
 }
 
 
-/* ---------- Overall width ---------- */
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
 
-header {
-  width: min(92%, 1120px);
+.site-header {
+  width: min(90%, 1120px);
   margin: 0 auto;
-}
 
-main,
-footer {
-  width: min(88%, 680px);
-  margin-left: auto;
-  margin-right: auto;
-}
+  padding-top: 24px;
 
-
-/* ---------- Navigation ---------- */
-
-header {
-  padding: 22px 0 0;
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  align-items: center;
+}
+
+.site-name,
+nav {
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
 .site-name {
   color: #222;
-  font-size: 0.85rem;
-  font-weight: 400;
+
+  font-size: 0.82rem;
+  font-weight: 550;
+
+  letter-spacing: -0.01em;
   text-decoration: none;
 }
 
 nav {
   display: flex;
-  gap: 28px;
-  font-size: 0.8rem;
+  gap: 30px;
+
+  font-size: 0.78rem;
 }
 
 nav a {
-  color: #333;
+  color: #383838;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: #888;
+  color: #8a8a8a;
 }
 
 
-/* ---------- Intro ---------- */
+/* --------------------------------------------------
+   MAIN GRID
+-------------------------------------------------- */
+
+main {
+  width: min(88%, 720px);
+  margin: 0 auto;
+}
+
+
+/* --------------------------------------------------
+   INTRO
+-------------------------------------------------- */
 
 .intro {
-  margin: 70px 0 95px;
+  margin-top: 132px;
+  margin-bottom: 126px;
+
+  max-width: 62ch;
 }
 
-.intro h1 {
-  margin: 0 0 42px;
-  color: #aaa5a5;
-  font-size: 3.25rem;
-  font-weight: 300;
-  line-height: 1.15;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+.lede {
+  margin: 0 0 20px;
+
+  max-width: 58ch;
+
+  color: #252525;
+
+  font-size: 1.18rem;
+  line-height: 1.55;
 }
 
-.intro p {
-  max-width: 620px;
+.intro-note {
   margin: 0;
-  color: #292929;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.08rem;
-  line-height: 1.5;
+
+  max-width: 58ch;
+
+  color: #747474;
+
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.77rem;
+  line-height: 1.6;
 }
 
 
-/* ---------- Sections ---------- */
+/* --------------------------------------------------
+   INDEX SECTIONS
+-------------------------------------------------- */
 
-section:not(.intro) {
-  margin-bottom: 75px;
+.index-section {
+  margin-bottom: 96px;
 }
 
-h2 {
-  margin: 0 0 27px;
+.index-section h2 {
+  margin: 0 0 35px;
+
   color: #333;
-  font-size: 0.85rem;
-  font-weight: 400;
+
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
   letter-spacing: 0;
-  text-transform: none;
 }
 
 
-/* ---------- Entries ---------- */
+/* --------------------------------------------------
+   ENTRIES
+-------------------------------------------------- */
 
-.item {
-  margin-bottom: 32px;
+.entry {
+  display: grid;
+
+  grid-template-columns: 92px minmax(0, 1fr);
+
+  column-gap: 28px;
+  align-items: start;
 }
 
-.item h3 {
-  margin: 0 0 5px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
+.entry-meta {
+  padding-top: 3px;
+
+  color: #969696;
+
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.70rem;
+  line-height: 1.5;
+
+  white-space: nowrap;
+}
+
+.entry-content {
+  max-width: 58ch;
+}
+
+.entry-content h3 {
+  margin: 0 0 8px;
+
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.45;
 }
 
-.item h3 a {
-  color: #222;
+.entry-content h3 a {
   text-decoration: none;
 }
 
-.item h3 a:hover {
+.entry-content h3 a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
-.item p {
-  max-width: 650px;
+.entry-content p {
   margin: 0;
-  color: #777;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
 
-.date {
-  margin-bottom: 6px !important;
-  color: #999 !important;
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 0.67rem !important;
-}
+  color: #717171;
 
-.more {
-  margin-top: 30px;
-}
-
-.more a {
-  color: #777;
-  font-size: 0.72rem;
-  text-decoration: none;
-}
-
-.more a:hover {
-  color: #222;
+  font-size: 0.87rem;
+  line-height: 1.6;
 }
 
 
-/* ---------- Footer ---------- */
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 
 footer {
-  margin-top: 110px;
-  padding: 25px 0 45px;
-  border-top: 1px solid #eee;
-  color: #aaa;
+  width: min(88%, 720px);
+
+  margin: 135px auto 0;
+  padding: 24px 0 42px;
+
+  border-top: 1px solid #eeeeee;
+
+  color: #a0a0a0;
+
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   font-size: 0.65rem;
 }
 
 
-/* ---------- Mobile ---------- */
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
 
 @media (max-width: 650px) {
 
-  header {
+  html {
+    font-size: 16.5px;
+  }
+
+  .site-header {
     width: 88%;
     padding-top: 20px;
   }
 
   nav {
-    gap: 17px;
+    gap: 18px;
     font-size: 0.72rem;
   }
 
@@ -193,11 +281,29 @@ footer {
   }
 
   .intro {
-    margin-top: 60px;
+    margin-top: 88px;
+    margin-bottom: 92px;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+  }
+
+  .index-section {
     margin-bottom: 75px;
   }
 
-  .intro h1 {
-    font-size: 2.45rem;
+  .entry {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
   }
+
+  .entry-meta {
+    padding-top: 0;
+  }
+
+  footer {
+    margin-top: 100px;
+  }
+
 }
