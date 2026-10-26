@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning from Self-Generated Experience — Siddharth Chundru</title>
-  <meta name="description" content="Independent research on exploration policies for embodied learning.">
+  <title>What Should a Robot Practise? — Siddharth Chundru</title>
+  <meta name="description" content="A controlled study of how goal selection during self-practice affects a robot policy's competence, behavioural repertoire and recovery.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="project-pages.css">
 </head>
@@ -20,25 +20,29 @@
 
   <main class="detail-page">
     <section class="page-intro">
-      <p class="detail-meta">Independent research · Ongoing</p>
-      <h1>Learning from Self-Generated Experience</h1>
-      <p>Experience generation, embodied learning, and generalization.</p>
+      <p class="detail-meta">Independent research · Ongoing · <a href="https://github.com/siddharthchundru/self-generated-experience">Code</a></p>
+      <h1>What Should a Robot Practise?</h1>
+      <p>Goal selection, behavioural repertoire and recovery in self-improving policies.</p>
     </section>
     <article class="longform">
       <h2>Research question</h2>
-      <p>When agents must learn from limited interaction with their environments, does the policy that determines which experiences they collect matter as much as the learning algorithm itself?</p>
-      <h2>Overview</h2>
-      <p>This project studies how different experience-generation strategies affect learned sensorimotor representations and downstream behavior. Its starting point is a controlled two-dimensional navigation environment, where training conditions can be compared under matched data or interaction budgets. The broader motivation is to understand whether agents learn more transferable structure by acting purposefully, exploring randomly, or following intrinsic signals such as novelty and competence progress.</p>
-      <h2>Planned comparison</h2>
+      <p>A goal-conditioned agent starts from a few demonstrations that cover only part of its world, then improves through a fixed budget of its own practice. With the learner, the demonstrations and the budget held fixed, how does the choice of what to practise affect its competence on the tasks it was shown, its behavioural repertoire (the distinct ways it can solve the same task), and its recovery when the solution it relies on is blocked?</p>
+      <h2>Why it matters</h2>
+      <p>When a demonstration-pretrained policy is improved with task reward, its behavioural modes tend to collapse onto a single solution (<a href="https://arxiv.org/abs/2605.11387">Longhini et al., 2026</a>; <a href="https://arxiv.org/abs/2509.25424">Ibn Hamid et al., 2025</a>). Published remedies add an explicit diversity objective, and deployment-time recovery methods assume the policy still has alternatives to fall back on. This project asks whether the goals an agent chooses to practise can preserve those alternatives on their own, and whether a preserved repertoire actually buys recovery.</p>
+      <h2>Design</h2>
+      <p>The environment is a custom PointMaze layout in MuJoCo in which key start–goal pairs have exactly two routes, one clearly shorter. Demonstrations cover both routes. The learner is goal-conditioned supervised learning (<a href="https://arxiv.org/abs/1912.06088">GCSL</a>) with a categorical action head, which, unlike a Gaussian head, can represent two routes at once. It is identical in every condition; only the rule for choosing practice goals varies:</p>
       <ul>
-        <li>Demonstrations or other fixed, externally collected experience.</li>
-        <li>Random exploration.</li>
-        <li>Goal-directed, outcome-sensitive experience generation.</li>
-        <li>Intrinsic exploration driven by novelty or learning progress.</li>
+        <li>Demonstrations only, with matched training steps.</li>
+        <li>Random actions.</li>
+        <li>Task-directed practice on the demonstrated goals.</li>
+        <li>Frontier novelty: practising the least-visited goals the agent has already reached, following <a href="https://arxiv.org/abs/2007.02832">MEGA</a>.</li>
       </ul>
+      <p>A re-learning control trains a fresh learner on each run's final data, to test whether any advantage lies in the collected data or in the active loop that collected it.</p>
       <h2>Evaluation</h2>
-      <p>The proposed evaluation examines model prediction error, state-space visitation or coverage, sample efficiency, and transfer to held-out goals or perturbed conditions. Experimental details, metrics, and baselines remain subject to revision as the implementation and literature review progress.</p>
-      <p class="detail-note">Status: research design and implementation in progress. No experimental results are reported here yet.</p>
+      <p>Three primary measures: success on the demonstrated tasks; repertoire, counted as the number of distinct routes that each account for a meaningful share of successful rollouts; and success after each agent's most-used route is blocked, both immediately and after a common adaptation procedure. Hypotheses, endpoints and analysis will be pre-registered on OSF after a pilot. Clear null results, shown by equivalence tests, count as answers.</p>
+      <h2>Build process</h2>
+      <p>The code is built with Claude Code in a two-agent workflow: one agent implements each stage, and a separate agent audits it for mismatched budgets, goal leakage and extra gradient updates. Audit reports are committed to the repository.</p>
+      <p class="detail-note">Status: specification, literature review and maze layouts with planner tests are complete. The simulation harness is in progress. No experimental results yet.</p>
       <p><a href="research.html">← Back to research</a></p>
     </article>
   </main>

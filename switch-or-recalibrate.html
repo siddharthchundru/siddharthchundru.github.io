@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switching or Recalibrating? — Siddharth Chundru</title>
+  <meta name="description" content="Two kinds of test-time adaptation in robot policies: switching behaviour after world changes and recalibrating after body changes.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project-pages.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="index.html">Siddharth Chundru</a>
+    <nav>
+      <a href="writing.html">Writing</a>
+      <a class="active" href="research.html">Research</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="detail-page">
+    <section class="page-intro">
+      <p class="detail-meta">Independent research · Design stage · <a href="https://github.com/siddharthchundru/switch-or-recalibrate">Code</a></p>
+      <h1>Switching or Recalibrating?</h1>
+      <p>Two kinds of test-time adaptation in robot policies.</p>
+    </section>
+    <article class="longform">
+      <h2>Research question</h2>
+      <p>A pretrained robot policy is deployed, and something changes. If the world changes, for example when a route becomes blocked, sensory input still looks normal; what fails is the behaviour the policy relies on, and adapting means switching to a different behaviour. If the body changes, for example when actuators are inverted or weakened or sensors are miscalibrated, the relation between what the agent commands and what it senses moves outside its trained range, and adapting means recalibrating. Are these different problems, solved by different mechanisms?</p>
+      <h2>Hypothesis</h2>
+      <p>Mechanisms that keep a use-dependent memory of the agent's own behaviour, which are habit-like, should switch well but not recalibrate. Mechanisms that restore internal or sensorimotor operating ranges, which are homeostasis-like, should recalibrate well but not switch. Both families draw on work on habits and homeostatic plasticity in embodied and artificial-life research (<a href="https://doi.org/10.3389/fnhum.2014.00590">Egbert &amp; Barandiaran, 2014</a>; Di Paolo, 2000), here applied to modern pretrained policies.</p>
+      <h2>Two tracks</h2>
+      <ul>
+        <li><strong>Recalibrating after body changes (method).</strong> Homeostatic test-time adaptation: gated, local plasticity in a frozen pretrained policy, with no reward, no task loss and no backpropagation. One monitor watches whether units stay within their usual activation ranges; a second compares commanded actions with their sensed outcomes. Compared against standard test-time renormalisation, entropy-minimisation adaptation and online fine-tuning.</li>
+        <li><strong>Switching after world changes (evaluation).</strong> A controlled comparison of switching mechanisms, including online fine-tuning, nearest-neighbour retrieval, failure-avoidance resampling adapted from <a href="https://arxiv.org/abs/2406.15917">Du et al. (2024)</a> and a use-dependent habit memory, measured for how quickly they switch and whether they return once the route reopens.</li>
+      </ul>
+      <h2>How the robot adapts, not only whether</h2>
+      <p>Recent test-time adaptation methods for robot policies report success after a change. This project also characterises how adaptation happens. Each post-change trajectory is labelled by route and by movement pattern, computed from realised motion rather than commanded actions, giving four outcomes: recovered (old route, old movement), rerouted (new route, old movement), compensated (old route, new movement) and novel (new route, new movement).</p>
+      <h2>Relation to other work</h2>
+      <p>The base policies come from <a href="self-generated-experience.html">What Should a Robot Practise?</a>, which produces policies whose repertoire differs in a controlled way. That makes it possible to test whether switching depends on how many alternative behaviours a policy has kept.</p>
+      <p class="detail-note">Status: specification and the literature review for the switching track are complete. The literature review for the recalibration method is under way. No code or results yet.</p>
+      <p><a href="research.html">← Back to research</a></p>
+    </article>
+  </main>
+
+  <footer><span>© 2026 Siddharth Chundru</span></footer>
+</body>
+</html>
